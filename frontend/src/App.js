@@ -1,15 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
       <div className="container">
-        <div className="header-box">moin</div>
-        <div className="input-box">moin</div>
+        <Heading className="header-box"/>
+        <Input className="input-box" />
         <div className="content-box">
-          <div className="open-box">1</div>
-          <div className="progress-box">2</div>
-          <div className="done-box">3</div>
+          <Todo-Field className="open-box"/>
+          <Todo-Field className="progress-box"/>
+          <Todo-Field className="done-box"/>
         </div>
       </div>
   );
