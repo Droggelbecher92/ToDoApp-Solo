@@ -2,7 +2,6 @@
     background-color: darkolivegreen;
     display: flex;
     flex-flow: wrap;
-    text-align: center;
 }
 
 .header__pic{
@@ -13,4 +12,5 @@
 
 .header__text{
     float: inside;
+    text-align: center;
 }
