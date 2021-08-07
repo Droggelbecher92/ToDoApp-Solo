@@ -1,6 +1,14 @@
-section{
+.itemcard{
     background-color: burlywood;
     border: solid 2px black;
     box-shadow: -5px 5px 5px dimgrey;
     border-radius: 8px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: left;
+}
+
+.itemcard__text{
+    text-align: center;
+    text-justify: distribute;
 }
