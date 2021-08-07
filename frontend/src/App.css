@@ -1,28 +1,33 @@
 .container {
   display: grid;
-  grid-auto-columns: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 1.5fr 1fr 7fr;
+  grid-auto-columns: 1fr;
   gap: 4px 0px;
+  grid-auto-flow: row;
   grid-template-areas:
-    "header-box header-box header-box"
-    "input-box input-box input-box"
-    "content-box content-box content-box";
+    "header-box"
+    "input-box"
+    "content-box";
 }
+
 .header-box { grid-area: header-box; }
+
 .input-box { grid-area: input-box; }
+
 .content-box {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   gap: 5px 5px;
+  grid-auto-flow: row;
   grid-template-areas:
-    "open-box progress-box done-box"
-    "open-box progress-box done-box"
     "open-box progress-box done-box";
   grid-area: content-box;
 }
-.open-box { grid-area: open-box; }
-.progress-box { grid-area: progress-box; }
-.done-box { grid-area: done-box; }
 
+.open-box { grid-area: open-box; }
+
+.progress-box { grid-area: progress-box; }
+
+.done-box { grid-area: done-box; }

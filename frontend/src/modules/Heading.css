@@ -1,0 +1,16 @@
+.header{
+    background-color: darkolivegreen;
+    display: flex;
+    flex-flow: wrap;
+    text-align: center;
+}
+
+.header__pic{
+    height: 50px;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.header__text{
+    float: inside;
+}
