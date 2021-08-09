@@ -24,6 +24,7 @@
   grid-template-areas:
     "open-box progress-box done-box";
   grid-area: content-box;
+  margin: 0 20px;
 }
 
 .open-box { grid-area: open-box; }

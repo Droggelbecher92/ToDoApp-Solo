@@ -7,7 +7,13 @@ export function ItemCard(probs){
     }
 
     return <section className="itemcard">
-        <h3 className="itemcard__text">{probs.todo.description}</h3>
-        <button onClick={buttonNext}>next</button>
+        <div>
+            <h3 className="itemcard__text">{probs.todo.description}</h3>
+        </div>
+
+        <div>
+            <button className="itemcard__btn" onClick={buttonNext}>next</button>
+        </div>
+
     </section>
 }

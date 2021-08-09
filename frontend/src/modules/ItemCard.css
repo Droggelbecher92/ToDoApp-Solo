@@ -5,10 +5,22 @@
     border-radius: 8px;
     display: flex;
     flex-flow: wrap;
-    justify-content: left;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .itemcard__text{
     text-align: center;
     text-justify: distribute;
+    display: block;
+    padding: 0 10px;
+}
+
+.itemcard__btn{
+    display: flex;
+    float: right;
+    padding: 30%;
+    border-radius: 7px;
+    background: #4ECA7D;
+    margin: 5px 0;
 }
