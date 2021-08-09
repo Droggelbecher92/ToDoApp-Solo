@@ -1,8 +1,7 @@
 import './Input.css'
-import {postTodo} from "../services/requests";
 import {useState} from "react";
 
-export function Input(){
+export function Input(props){
     const [description, setDescription] = useState('')
 
     const saveTyped = (event) => {
@@ -11,6 +10,6 @@ export function Input(){
 
     return <section className="input">
         <input className="input__field" type="text" onChange={saveTyped}/>
-        <button className="input__btn" onClick={()=>postTodo(description)}>ADD</button>
+        <button className="input__btn" onClick={()=>props.addTodo(description)}>ADD</button>
     </section>
 }
