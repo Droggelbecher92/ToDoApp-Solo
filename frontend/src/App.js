@@ -10,9 +10,9 @@ import axios from "axios";
 function App() {
 
     const [alltodos, setAlltodos]= useState([])
-    const [opentodos, setOpentodos] = useState([])
-    const [progresstodos, setProgresstodos] = useState([])
-    const [donetodos, setDonetodos] = useState([])
+    const opentodos = alltodos.filter(todo => todo.status === "OPEN")
+    const progresstodos = alltodos.filter(todo => todo.status === "IN_PROGRESS")
+    const donetodos = alltodos.filter(todo => todo.status === "DONE")
 
     function getTodos(){
         return  axios.get('api/todo').then(result => setAlltodos(result.data))
@@ -24,7 +24,7 @@ function App() {
     }
 
     function putTodo(id){
-        return axios.put('api/todo/'+id)
+        return axios.put('api/todo/'+id).then(getTodos)
     }
     /*
     export function deleteTodo(){
@@ -35,24 +35,15 @@ function App() {
         getTodos()
     },[])
 
-    useEffect(() => {
-        setOpentodos(alltodos.filter(todo => todo.status === "OPEN"))
-        setProgresstodos(alltodos.filter(todo => todo.status === "IN_PROGRESS"))
-        setDonetodos(alltodos.filter(todo => todo.status === "DONE"))
-    },[alltodos])
-
-
-
-
 
     return (
         <div className="container">
             <Heading className="header-box"/>
             <Input className="input-box" addTodo={postTodo}/>
             <div className="content-box">
-                <TodoField className="open-box" title="OPEN" todos={opentodos}/>
-                <TodoField className="progress-box" title="IN PROGRESS" todos={progresstodos}/>
-                <TodoField className="done-box" title="DONE" todos={donetodos}/>
+                <TodoField className="open-box" title="OPEN" todos={opentodos} nextTodo ={putTodo}/>
+                <TodoField className="progress-box" title="IN PROGRESS" todos={progresstodos} nextTodo ={putTodo}/>
+                <TodoField className="done-box" title="DONE" todos={donetodos} nextTodo ={putTodo}/>
             </div>
         </div>
     )
